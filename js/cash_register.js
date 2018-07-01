@@ -2,7 +2,7 @@
     // var test = 'Hello cash_register!';
     // console.log(test);
     
-    var getScreen = document.getElementById('screen');
+    var getBottomScr = document.getElementById('bottomScr');
     var getAcc = document. getElementsByClassName('acc');
 
     var acct;
@@ -15,20 +15,24 @@
     function accBut() {
         acct = this.innerHTML;
         console.log(acct);
-        if (acct == 'bal') {
-            getScreen.innerHTML = Number(toBal);
+        if (acct === 'bal') {
+            getBottomScr.innerHTML = Number(toBal);
             console.log(toBal);
-            // getScreen.innerHTML = null;
+            // getBottomScr.innerHTML = null;
         }
-        else if (acct == 'dep') {
-            toBal = Number(getScreen.innerHTML) + toBal;
+        else if (acct === 'dep') {
+            toBal = Number(getBottomScr.innerHTML) + toBal;
             console.log(toBal);
-            getScreen.innerHTML = null;
+            listScr.innerHTML += '<br />';
+            listScr.innerHTML += toBal + '<br />';
+            getBottomScr.innerHTML = null;
         }
-        else if (acct == 'wd') {
-            toBal = toBal - Number(getScreen.innerHTML);
+        else if (acct === 'wd') {
+            toBal = toBal - Number(getBottomScr.innerHTML);
             console.log(toBal);
-            getScreen.innerHTML = null;
+            listScr.innerHTML += '<br />';
+            listScr.innerHTML += toBal + '<br />';
+            getBottomScr.innerHTML = null;
         }
     }
 
